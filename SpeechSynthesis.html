@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API de voz</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+</head>
+<body>
+    <style>
+        #textInput{  
+            text-align:center;
+            font-size: 24px;
+            max-width: 40%;
+            margin: 0 auto;
+        }
+
+        #botao_div{
+            text-align:center;
+            
+        }
+        #h1foda{
+            text-align:center;
+            
+        }
+        #titulo{
+            text-align:center;
+            
+        }
+    </style>
+ <br>
+
+ <h1 id= "titulo" class="title">Programa Ultilizando a API SpeechSynthesisUtterance! </h1>
+ <br>
+ <br>
+ 
+<div id="h1foda">
+    <input  class="input is-success"  class="input is-rounded" type="text" id="textInput" value="Digite aqui!">
+</div>
+ <br>
+ <br>
+ <br>
+ 
+<div id="botao_div">
+    <button class="button is-focused" class="button is-primary is-inverted" onclick="readText()">Ler texto</button>
+</div>
+ 
+<script>
+function readText() {
+    var inputText = document.getElementById("textInput").value;
+    var speech = new SpeechSynthesisUtterance();
+    speech.text = inputText;
+    speech.volume = 1;
+    speech.rate = 1;
+    speech.pitch = 1;
+    speech.lang = 'pt-BR';
+    
+    window.speechSynthesis.speak(speech);
+}
+</script>
+ 
+</body>
+</html>
